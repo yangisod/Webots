@@ -1,0 +1,73 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.0396217963687959 -0.32378857306118675 -0.9452994621851375 3.3719203227307375
+  position 1.2297453659603461 4.030846556789891 7.2727090314457365
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 1 0 0 1.5707963267948966
+  floorSize 4 4
+  wallThickness 0.1
+  wallHeight 2.2
+}
+CardboardBox {
+  translation 1.31407 0.444198 0.3
+  rotation 1 0 0 1.5707963267948966
+}
+CardboardBox {
+  translation -0.516514 1.38773 0.3
+  rotation 1 0 0 1.5707963267948966
+  name "cardboard box(1)"
+}
+WoodenBox {
+  translation -0.797045 -1.02408 0.3
+  rotation 1 0 0 1.5707963267948966
+}
+DEF PIONEER_3DX Pioneer3dx {
+  hidden position_0_0 -0.00013770886787938585
+  hidden position_0_1 1.2000000000118727
+  hidden position_0_2 1.2000000000118733
+  hidden linearVelocity_0 9.99834371596408e-12 -3.690530820040926e-14 3.716360222697701e-14
+  hidden angularVelocity_0 2.1286977352798138e-15 -9.98952519781973e-12 1.9414096854097334e-13
+  hidden rotation_1 0 -1 0 0.00013770886654682887
+  hidden position_1_0 6.412756022414529
+  hidden rotation_2 -1 0 0 6.153614591944645
+  hidden rotation_4 -1 0 0 1.200000000011872
+  hidden rotation_9 -1 0 0 1.2000000000118731
+  translation -1.3596864963215984 0.20038234807510924 0.09492486099117153
+  rotation -0.5828859484974497 0.5828962039003011 0.5661059852384948 -2.111356884221765
+  controller "ros"
+  controllerArgs [
+    "--name=pioneer3at"
+  ]
+}
+Robot {
+  translation 0.73 -0.99 0
+  rotation 1 0 0 0
+  children [
+    VelodyneVLP-16 {
+      translation 0 -1.3014783448173084e-05 0.3099219409140131
+      rotation 1 0 0 1.5708000000000002
+    }
+    VelodyneHDL-32E {
+      translation 0 -3.221714999979142e-05 0.19989644068668577
+      rotation 1 0 0 1.5708000000000002
+    }
+    Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  controller "ros"
+  controllerArgs [
+    "--name=lidar"
+  ]
+}

@@ -1,0 +1,66 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.11436141820196051 0.9571158241518531 0.2661780704433696 2.361314228688303
+  position 4.665815696278391 5.326158112030001 -6.256906982710592
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 5 5
+}
+Solid {
+  translation 0 1 2.4
+  children [
+    Shape {
+      appearance BlanketFabric {
+      }
+      geometry Box {
+        size 5 2 0.1
+      }
+    }
+  ]
+}
+Solid {
+  translation -2.41 1 0.03
+  rotation 0 1 0 1.5708
+  children [
+    Shape {
+      appearance BlanketFabric {
+      }
+      geometry Box {
+        size 5 2 0.1
+      }
+    }
+  ]
+  name "solid(1)"
+}
+Robot {
+  translation 0 0 -1.62
+  children [
+    VelodyneVLP-16 {
+      translation 0 0.5 0
+    }
+    InertialUnit {
+      translation 0 0.5 0
+      children [
+        Shape {
+          appearance BlanketFabric {
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "imu"
+    }
+  ]
+  controller "ros"
+  controllerArgs [
+    "--name=robot1"
+  ]
+}

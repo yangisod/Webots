@@ -1,0 +1,220 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.4075263614045095 -0.8090372770294278 -0.42353388192352415 1.8186569369731393
+  position -1.176393768693606 1.8376018775878937 -0.2249750128777585
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0 -0.05 0
+}
+Robot {
+  translation 0.187633982617941 -0.010282634069622924 -0.09664269646029722
+  rotation 1.0255460714852703e-05 0.9999999999069528 8.995555752242989e-06 1.5409497492346018
+  children [
+    InertialUnit {
+      translation 0 0.03 0.04
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+          }
+          geometry Box {
+            size 0.02 0.02 0.02
+          }
+        }
+      ]
+      name "imu"
+    }
+    DistanceSensor {
+      translation -0.02 0 0.1
+      rotation 0 1 0 -1.8317996938995749
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.113725 0.854902 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_right"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    GPS {
+      children [
+        Solid {
+          translation 0 0.01 0
+          children [
+            Shape {
+              appearance PBRAppearance {
+                baseColor 1 0.333333 0
+                metalness 0
+              }
+              geometry Cylinder {
+                height 0.05
+                radius 0.01
+              }
+            }
+          ]
+        }
+      ]
+      name "global"
+    }
+    DistanceSensor {
+      translation 0.02 0 0.1
+      rotation 0 1 0 -1.27
+      children [
+        DEF sensor Shape {
+          appearance PBRAppearance {
+            baseColor 0.113725 0.854902 1
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.01 0.01
+          }
+        }
+      ]
+      name "ds_left"
+      boundingObject USE sensor
+      physics Physics {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 31.648147766947226
+        anchor 0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel1"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060000000076791724 3.81615113323033e-06 0.050000902407876004
+        rotation -0.11517067544748863 0.11507899860917477 -0.9866572553810562 4.699753083306598
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 1 0 0
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics Physics {
+        }
+        linearVelocity 2.9579863765138642e-08 -1.25033898669367e-07 9.5020403560643e-08
+        angularVelocity -1.0492652730838247e-06 -8.836272502813811e-07 -1.2766317014012949e-06
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 151.6478301058992
+        anchor -0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel2"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999992292243 2.593695461210032e-06 -0.049997039360615086
+        rotation 0.381946498836422 -0.38164246617102304 0.8417041642058679 1.741491664942983
+        children [
+          USE wheel
+        ]
+        name "solid(3)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+        linearVelocity -7.678408534433427e-08 1.2499108511712946e-07 9.45170212938075e-10
+        angularVelocity -1.0494262483786995e-06 -8.836275022622031e-07 -1.2678824457188234e-06
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 31.648195446109288
+        anchor 0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel3"
+        }
+      ]
+      endPoint Solid {
+        translation 0.06000000007617395 3.785583172027519e-06 -0.04999910462995928
+        rotation -0.11519390330965708 0.11510220798187971 -0.9866518364438296 4.699747591510695
+        children [
+          USE wheel
+        ]
+        name "solid(2)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+        linearVelocity 3.2239855385776305e-08 -2.860025236380067e-09 4.195293430672725e-09
+        angularVelocity -1.0491653136383847e-06 -8.836272516744007e-07 -1.2766247844751218e-06
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 151.64778057933881
+        anchor -0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "wheel4"
+        }
+      ]
+      endPoint Solid {
+        translation -0.0599999999223047 2.614512807714017e-06 0.0500029841036788
+        rotation 0.3819286816796514 -0.3816246631964898 0.8417203208611571 1.7414727488873596
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics Physics {
+        }
+        linearVelocity -7.94934551218891e-08 2.8171925299574847e-09 9.179707151382189e-08
+        angularVelocity -1.0495274279705786e-06 -8.836275074820633e-07 -1.2678850823977045e-06
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+        baseColor 0.333333 1 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "keyboa"
+  linearVelocity -2.1576143361422503e-08 -2.676324879167893e-10 4.5686190618600824e-08
+  angularVelocity -1.0490735357170296e-06 -8.836264307498117e-07 -1.278039936422337e-06
+}
+Rock10cm {
+  hidden linearVelocity_0 -1.7231897786153792e-06 -2.0041671650574388e-07 3.979830808514556e-06
+  hidden angularVelocity_0 8.41070749850198e-05 -8.186445882390497e-07 3.8268658054958e-05
+  translation 0.33219308870320663 -0.004058229566950301 -0.17927632508896874
+  rotation 0.042924391014196685 0.2926083797684841 0.9552684610858472 2.6477222142220596
+  physics Physics {
+  }
+}

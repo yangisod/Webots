@@ -1,0 +1,21 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.7547004902622912 0.6029950369659922 0.25850368545194696 1.0331747617398568
+  position 4.749151470382095 8.238744237145227 6.1082988505779054
+}
+RectangleArena {
+  floorSize 5 5
+}
+DEF pio Pioneer2 {
+  translation 0 0.06 0
+  name "pioneer2"
+  controller "testPLE"
+  supervisor TRUE
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}

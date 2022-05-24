@@ -1,0 +1,7 @@
+<launch>
+    
+    <param name="initFlag" type="int" value="0"/>
+    <param name="octreeResultTopicName" type="string" value="pubOctree_result2"/>
+    <node pkg="finallasermapping" type="finalmapping" name="finalmapping" output="screen" />
+
+</launch>

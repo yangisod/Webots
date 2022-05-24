@@ -1,0 +1,59 @@
+#VRML_SIM R2021a utf8
+WorldInfo {
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  orientation -0.42678654365816626 0.871889357004258 0.24012953857245004 1.1461529726280737
+  position 1.9610653692297562 1.6627011653801953 0.9962099024226342
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+Floor {
+}
+Robot {
+  translation 0 0.1 0
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        axis 0 5 0
+      }
+      device [
+        RotationalMotor {
+          name "romotor"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.15 0
+        children [
+          Shape {
+            appearance BlanketFabric {
+            }
+            geometry Cylinder {
+              height 0.1
+              radius 0.05
+            }
+          }
+        ]
+        boundingObject Cylinder {
+          height 0.1
+          radius 0.05
+        }
+        physics Physics {
+        }
+      }
+    }
+    DEF body Shape {
+      appearance PBRAppearance {
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  boundingObject USE body
+  physics Physics {
+  }
+  controller "my_controller1"
+}
